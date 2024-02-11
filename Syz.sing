@@ -1,1 +1,25 @@
 
+
+LIB "nleadLift.lib";
+LIB "Second_lift_Tree.lib";
+
+ring S= 0, (w,x,y,z), (dp,c);
+ideal I_Gr= w2-x*z, w*x- y*z, x2-w*y, x*y- z2, y2- w*z;
+
+//module syz_lead= leadSyz(I_Gr);
+//syz_lead;
+
+//vector str= w*gen(3);
+//vector s_hat= liftTree(I_Gr,str);
+//vector ss_hat= subLiftTree(I_Gr, str);
+//s_hat;
+module s_t= sYZLIFT(I_Gr);
+//s_t;
+//module ss_t= Sec_leadSyz(s_t);
+vector ss_r= w2*gen(6);
+
+vector c0m= x*gen(5);
+//vector st_r=subLiftTree2(s_t, c0m);
+//int cccm= coM2(s_t, ss_r, c0m);
+module LlM= sYZLIFT2(s_t);
+LlM;
